@@ -6,6 +6,9 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    volumes:
+      - ./api:/app/api
+      - ./recommender:/app/recommender  # Montamos la carpeta recommender  
     env_file:
       - .env
     environment:
@@ -15,6 +18,8 @@ services:
     build: ./recommender
     depends_on:
       - db
+    volumes:
+      - ./recommender:/app/recommender  # Asegúrate de que también se comparta el volumen si es necesario  
     env_file:
       - .env
     environment:

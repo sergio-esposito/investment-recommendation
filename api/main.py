@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from recommender import get_recommendation
+from recommender.recommender import get_recommendation
 
 app = FastAPI()
 
